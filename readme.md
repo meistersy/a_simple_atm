@@ -12,3 +12,13 @@ A bank API wouldn't give the ATM the PIN number, but it can tell you if the PIN 
 Based on your work, another engineer should be able to implement the user interface. You don't need to implement any REST API, RPC, network communication etc, but just functions/classes/methods, etc.
 
 You can simplify some complex real world problems if you think it's not worth illustrating in the project.
+
+---
+
+## class TellerMachine
+
+## class BankCard
+
+## class Account
+
+## ATMServiceProvider
