@@ -12,3 +12,61 @@ A bank API wouldn't give the ATM the PIN number, but it can tell you if the PIN 
 Based on your work, another engineer should be able to implement the user interface. You don't need to implement any REST API, RPC, network communication etc, but just functions/classes/methods, etc.
 
 You can simplify some complex real world problems if you think it's not worth illustrating in the project.
+
+---
+
+## class TellerMachine
+### Methods
+* Insert Card
+* Input PIN
+* Select Operation
+  * Select Account 
+  * Show Balance
+  * Deposit
+  * Withdraw
+* Show the result of operation
+
+## class BankCard
+### Attributes
+* Card Number (Conceptually, manage as key of Dictionary at DataBase)
+* PIN Number
+### Methods
+* PIN Number Authentication
+* PIN Number Change
+
+## class Account
+All the Account must be associated with BankCard.
+### Attributes
+* Account ID (Conceptually, manage as key of Dictionary at DataBase)
+* Balance
+### Methods
+* Deposit
+* Withdraw
+* Get Balance
+
+## class ATMDataProvider
+### Attributes
+* Dictionary for BankCard
+* Dictionary for Account
+* Dictionary for association table of BankCard and Account
+### Methods
+* Add BankCard
+* Add Account (must be associated with card)
+* List up all the BankCard and Account
+* Get the Account IDs by BankCard instance
+* Get the Account Instance by Account ID
+* Get the BankCard instance with PIN validation
+
+## class ATMServiceProvider
+### Attributes
+* ATMDataBase
+* Temporal : Inserted Card Information
+* Temporal : Selected Account Information
+### Methods
+* Issue Account via ATMDB (need card information)
+* Issue BankCard via ATMDB
+* Authentication
+* Deposit
+* Withdraw
+* Get Balance
+* Remove Card : Reset current authencation information
