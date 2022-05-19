@@ -20,10 +20,10 @@ You can simplify some complex real world problems if you think it's not worth il
 * Insert Card
 * Input PIN
 * Select Operation
-** Select Account 
-** Show Balance
-** Deposit
-** Withdraw
+  * Select Account 
+  * Show Balance
+  * Deposit
+  * Withdraw
 * Show the result of operation
 
 ## class BankCard
