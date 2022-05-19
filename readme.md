@@ -92,8 +92,8 @@ You can simplify some complex real world problems if you think it's not worth il
 ### Methods
 * Insert Card
 * Input PIN
+* Select Account 
 * Select Operation
-  * Select Account 
   * Show Balance
   * Deposit
   * Withdraw
