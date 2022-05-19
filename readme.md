@@ -2,7 +2,7 @@
 ## Execute Source Code
 1. Python 3 must be installed.
 2. Clone repository into local workspace
-3. Open cmd.exe or power shell
+3. Open cmd.exe or power shell in windows, or terminal in linux.
 4. Move to local repository in command line console.
 5. Execute $ python3 teller_machine.py
 
