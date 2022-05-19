@@ -32,11 +32,12 @@ You can simplify some complex real world problems if you think it's not worth il
 * PIN Number
 ### Methods
 * PIN Number Authentication
+* PIN Number Change
 
 ## class Account
 All the Account must be associated with BankCard.
 ### Attributes
-* Account Number (Conceptually, manage as key of Dictionary at DataBase)
+* Account ID (Conceptually, manage as key of Dictionary at DataBase)
 * Balance
 ### Methods
 * Deposit
@@ -50,12 +51,10 @@ All the Account must be associated with BankCard.
 * Dictionary for association table of BankCard and Account
 ### Methods
 * Add BankCard
-* Add Account
-* Associate BankCard and Account
+* Add Account (must be associated with card)
 * List up all the BankCard and Account
-* Validate BankCard Number
-* Get the list of Cccount associated with specific BankCard Number
-* Get the Account by BankCard instance
+* Get the Account IDs by BankCard instance
+* Get the Account Instance by Account ID
 * Get the BankCard instance with PIN validation
 
 ## class ATMServiceProvider
