@@ -24,5 +24,5 @@ class Account:
             self.__Balance -= cash
             return cash
         else :
-            return cash
+            return None
     

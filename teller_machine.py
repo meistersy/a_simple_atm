@@ -26,11 +26,15 @@ class TellerMachine:
                 continue
             elif self.__state_insertcard == state :
                 card_number = input("INSERT CARD('xxxx-xxxx-xxxx-xxxx') >> ")
+                if card_number == 'q' or card_number == 'Q' :
+                    exit()
                 state = self.__state_inputpin
                 pin_retry = 3
                 continue
             elif self.__state_inputpin == state :
                 pin_number = input("INPUT PIN Number('xxxx') >> ")
+                if pin_number == 'q' or pin_number == 'Q' :
+                    exit()
                 if True == self.__atm_service.insertCard(card_number=card_number, PIN=pin_number) :
                     state = self.__state_selectaccount
                 elif 0 >= pin_retry:
@@ -47,6 +51,8 @@ class TellerMachine:
                 for i in accounts :
                     print(i)
                 input_id = input("SELECT Account ID >> ")
+                if input_id == 'q' or input_id == 'Q' :
+                    exit()
                 if input_id in accounts :
                     self.__atm_service.selectAccount(account_id=input_id)
                     state = self.__state_selectoperation
@@ -56,6 +62,8 @@ class TellerMachine:
                 print("2) Deposit")
                 print("3) withdraw")
                 operation = input("select Operation (1-3) >> ")
+                if operation == 'q' or operation == 'Q' :
+                    exit()
                 
                 if not operation.isdigit() :
                     continue
@@ -69,11 +77,15 @@ class TellerMachine:
                 state = self.__state_endoperation
             elif self.__state_deposit == state :
                 cash = input("INSERT Cash to deposit >> ")
+                if cash == 'q' or cash == 'Q' :
+                    exit()
                 if cash.isnumeric() :
                     self.__atm_service.deposit(int(cash))
                 state = self.__state_seebalance
             elif self.__state_withdraw == state :
                 cash = input("INPUT Cash to withdraw >> ")
+                if cash == 'q' or cash == 'Q' :
+                    exit()
                 if cash.isnumeric() :
                     withdraw = self.__atm_service.withdraw(int(cash))
                 if withdraw == None :
@@ -81,6 +93,8 @@ class TellerMachine:
                 state = self.__state_seebalance
             elif self.__state_endoperation == state :
                 select = input("Remove Card? (y/n) >>")
+                if select == 'q' or select == 'Q' :
+                    exit()
                 if select == 'y' :
                     state = self.__state_insertcard
                 elif select == 'n' : 
