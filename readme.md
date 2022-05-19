@@ -1,3 +1,76 @@
+# How to run
+## Execute Source Code
+1. Python 3 must be installed.
+2. Clone repository into local workspace
+3. Open cmd.exe or power shell
+4. Move to local repository in command line console.
+5. Execute $ python3 teller_machine.py
+
+## Test program in Console
+1. You can see the initial screen on console as below :
+```
+> python .\teller_machine.py
+9880-2290-6302-7713
+2025-3450-4562-8140
+9180-3349-7481-7032
+INSERT CARD('xxxx-xxxx-xxxx-xxxx') >>
+```
+2. Typing the card number at the prompt and press enter key and the program asks PIN number. the PIN number is fixed as 0000 for test.
+3. Then program shows account list associated with the card.
+```
+INSERT CARD('xxxx-xxxx-xxxx-xxxx') >> 9180-3349-7481-7032
+INPUT PIN Number('xxxx') >> 0000
+Account List >>
+59640-49179-37775
+SELECT Account ID >>
+```
+4. Typing the account ID and press enter as similar with card number. Program shows available option for operation.
+```
+SELECT Account ID >> 59640-49179-37775
+1) see Balance
+2) Deposit
+3) withdraw
+select Operation (1-3) >>
+```
+5. If you select 1) see Balance, the balance of account shows on the screen. Program asks remove the card or not after each operation.
+```
+select Operation (1-3) >> 1
+Balance :  0
+Remove Card? (y/n) >>n
+1) see Balance
+2) Deposit
+3) withdraw
+select Operation (1-3) >>
+```
+6. Below is the example result of deposit and withdraw operation. Program shows the balance after each operation. If you try to withdraw more money than balance, program shows warning message and withdraw operation not performed.
+```
+select Operation (1-3) >> 2
+INSERT Cash to deposit >> 50000
+Balance :  50000
+Remove Card? (y/n) >>n
+1) see Balance
+2) Deposit
+3) withdraw
+select Operation (1-3) >> 3
+INPUT Cash to withdraw >> 60000
+!!! too much cashes to withdraw !!!
+Balance :  50000
+Remove Card? (y/n) >>n
+1) see Balance
+2) Deposit
+3) withdraw
+select Operation (1-3) >> 3
+INPUT Cash to withdraw >> 30000
+Balance :  20000
+Remove Card? (y/n) >>
+```
+7. If you want to exit the program, input 'q' or 'Q' at the any prompt.
+```
+Remove Card? (y/n) >>q
+>
+```
+
+
 # Requirements
 At least the following flow should be implemented:
 
